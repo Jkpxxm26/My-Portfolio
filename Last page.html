@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story M.4</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #e1f5fe, #4fc3f7); /* Grey-white gradient */
+            color: #333;
+        }
+        header {
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Light white background */
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #333;
+        }
+        main {
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9); /* Light background for content */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8); /* Dark footer */
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .back-button:hover {
+            transform: scale(1.2);
+        }
+
+        .img-memory {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            width: 300px;
+            height: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+        .image-container:hover .tooltip {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .image-container {
+                width: 200px;
+                height: 133px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-container {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .tooltip {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        /* Styling for enlarged image */
+        .image-enlarged {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.5); /* Make it scale and center */
+            z-index: 1000;
+            width: 30%; /* Adjust the size of the enlarged image */
+            height: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .image-enlarged.hidden {
+            transform: translate(-50%, -50%) scale(0); /* Reduce size to 0 when hidden */
+            opacity: 0;
+        }
+
+        /* Styling for the description text */
+        .description {
+            position: absolute;
+            bottom: -30px; /* Position it just below the image */
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 1.2em;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 15px;
+            border-radius: 15px;
+            opacity: 0;
+            transition: opacity 0.5s ease, bottom 0.5s ease;
+        }
+
+        .description.show {
+            opacity: 1;
+            bottom: 80px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Story M.4</h1>
+    </header>
+    <main>
+        <p>
+            <font size="10">
+                <b> ขอบคุณที่อ่านจนจบนะครับ🙏 </b>
+            </font>
+        </p>
+        <p>
+            <font size="5">
+                นี้คือรวมรูปชีวิตของ <b>"เด็กม.ปลาย"</b>
+            </font>
+        </p>
+        <p>
+            <b>ข้อคิดจากชีวิต :</b> comming soon... 
+        </p>
+        <button class="back-button" onclick="window.location.href='Home page.html'">coming soon</button> <!--รอใส่ในอนาคตว่าจะกดเข้าไปแล้วเป็นอะไรต่อ-->
+    </main>
+    <div class="img-memory">
+        <div class="image-container" onclick="enlargeImage(this)">
+            <img src="img Homepage/IMG_0119.jpg" alt="รายละเอียดรูปภาพ 1">
+            <span class="tooltip"> แข่งวอเลย์บอลปีใหม่ 15/12/2567 </span>
+        </div>
+        <div class="image-container" onclick="enlargeImage(this)">
+            <img src="img Homepage/IMG_7538.jpg" alt="รายละเอียดรูปภาพ 2">
+            <span class="tooltip"> รับใบเกียรติบัตรแข่งวงโยธวาทิต(กรมพละ) </span>
+        </div>
+        <div class="image-container" onclick="enlargeImage(this)">
+            <img src="img Homepage/IMG_8479.jpg" alt="รายละเอียดรูปภาพ 3">
+            <span class="tooltip"> กิจกรรม</span>
+        </div>
+        <div class="image-container" onclick="enlargeImage(this)">
+            <img src="img Homepage/IMG_8487.jpg" alt="รายละเอียดรูปภาพ 4">
+            <span class="tooltip"> ถ่ายรูปรวมห้อง10(งานเกษียณครูรังษฤทธิ์) </span>
+        </div>
+        <div class="image-container" onclick="enlargeImage(this)">
+            <img src="img Homepage/IMG_9124.jpg" alt="รายละเอียดรูปภาพ 5">
+            <span class="tooltip"> โผนรับเครื่องหมาย รด. </span>
+        </div>
+        <div class="image-container" onclick="enlargeImage(this)">
+            <img src="GTA5_2024-05-12_18-13-40_upscayl_4x_realesrgan-x4plus_copy.png" alt="รายละเอียดรูปภาพ 6">
+            <span class="tooltip">รายละเอียดรูปภาพ 6</span>
+        </div>
+        <div class="image-container" onclick="enlargeImage(this)">
+            <img src="GTA5_2024-05-12_18-13-40_upscayl_4x_realesrgan-x4plus_copy.png" alt="รายละเอียดรูปภาพ 7">
+            <span class="tooltip">รายละเอียดรูปภาพ 7</span>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; เขียนวันที่สิ้นสุดการเขียน </p>
+    </footer>
+    <script>
+        let enlargedImage = null;
+
+        function enlargeImage(element) {
+            const img = element.querySelector("img");
+            const descriptionText = element.querySelector(".tooltip").innerText; // Get the description text
+            const enlargedImg = img.cloneNode(); // Clone the clicked image
+            enlargedImg.classList.add("image-enlarged");
+
+            // Create a description div
+            const description = document.createElement("div");
+            description.classList.add("description");
+            description.innerText = descriptionText;
+
+            // Set the enlarged image to be centered in the middle of the screen
+            enlargedImg.style.left = "50%";
+            enlargedImg.style.top = "50%";
+
+            document.body.appendChild(enlargedImg);
+            document.body.appendChild(description);
+
+            // Apply transition to enlarge it smoothly
+            setTimeout(() => {
+                enlargedImg.style.transform = "translate(-50%, -50%) scale(1.5)"; // Enlarge the image
+                description.classList.add("show"); // Show the description
+            }, 50); // Small delay for smooth transition
+
+            enlargedImg.onclick = function() {
+                // Add hidden class to hide the image smoothly
+                enlargedImg.classList.add("hidden");
+                description.classList.remove("show");
+
+                // Wait for the transition to finish, then remove it from the DOM
+                enlargedImg.addEventListener('transitionend', () => {
+                    enlargedImg.remove();
+                    description.remove();
+                });
+            };
+        }
+    </script>
+</body>
+</html>
