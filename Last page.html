@@ -121,23 +121,23 @@
             position: fixed;
             top: 40%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(1.5); /* Make it scale and center */
+            transform: translate(-50%, -50%) scale(1.5); 
             z-index: 1000;
-            width: 30%; /* Adjust the size of the enlarged image */
+            width: 30%; 
             height: auto;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
             transition: all 0.5s ease-in-out;
         }
 
         .image-enlarged.hidden {
-            transform: translate(-50%, -50%) scale(0); /* Reduce size to 0 when hidden */
+            transform: translate(-50%, -50%) scale(0); 
             opacity: 0;
         }
 
         /* Styling for the description text */
         .description {
             position: absolute;
-            bottom: -30px; /* Position it just below the image */
+            bottom: -30px; 
             left: 50%;
             transform: translateX(-50%);
             color: #fff;
