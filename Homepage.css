@@ -1,3 +1,4 @@
+/* 1. ดึงฟอนต์ Google Fonts (Prompt) มาใช้งาน */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -171,4 +172,37 @@ footer {
 
 .modal-close:hover {
     color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 16px 12px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-info .title-text {
+        font-size: 1.1rem;
+    }
+
+    .hero-info .sub-text {
+        font-size: 0.9rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 14px 20px;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 15px;
+    }
 }
