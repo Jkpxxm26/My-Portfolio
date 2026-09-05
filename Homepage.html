@@ -1,47 +1,113 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Story Prem</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Homepage.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Welcome to "My Portfolio"</h1>
-        </header>
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a class="nav-brand" href="Homepage.html">My Portfolio<span>.</span></a>
+            <div class="nav-links">
+                <a href="Port.html">Portfolio</a>
+                <a href="activity.html">Activity</a>
+                <a href="skill.html">Skill training</a>
+            </div>
+        </div>
+    </nav>
 
-        <main class="hero-info">
-            <p class="title-text">Welcome to the story of Prem.</p>
-            <p class="sub-text">ยินดีต้อนรับเข้าสู่ผลงานของ "เปรม"</p>
-            <div class="badge">นาย จักรกฤษ มิ่งเชื้อ • Bmp รุ่นที่ 70</div>
+    <div class="container">
+
+        <main>
+            <section class="hero">
+                <div class="hero-copy">
+                    <p class="intro-line">ยินดีต้อนรับเข้าสู่ผลงานของ</p>
+                    <h1>สวัสดีครับ ผมชื่อ<br><span class="name-highlight">เปรม</span></h1>
+                    <p class="hero-desc">
+                        พื้นที่รวบรวมผลงาน กิจกรรม และทักษะที่ผมได้ฝึกฝนสะสมมา
+                        
+                    </p>
+                    <div class="hero-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">ชื่อ-สกุล</span>
+                            <span class="meta-value">จักรกฤษ มิ่งเชื้อ</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">โรงเรียน</span>
+                            <span class="meta-value">เบญจมเทพอุทิศเพชรบุรี</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">รุ่น</span>
+                            <span class="meta-value">Dek70</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="visual-ring"></div>
+                    <div class="visual-frame">
+                        <span class="visual-initial">Prem</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="explore">
+                <h2>ผลงานแต่ละด้าน</h2>
+
+                <div class="explore-list">
+                    <a class="explore-item" href="Port.html">
+                        <div class="explore-text">
+                            <h3>Portfolio</h3>
+                            <p>รวมผลงานและชิ้นงานที่ผ่านมา</p>
+                        </div>
+                    </a>
+
+                    <a class="explore-item" href="activity.html">
+                        <div class="explore-text">
+                            <h3>Activity</h3>
+                            <p>กิจกรรมที่เข้าร่วมระหว่างเรียน</p>
+                        </div>
+                    </a>
+
+                    <a class="explore-item" href="page4.html">
+                        <div class="explore-text">
+                            <h3>Skill training</h3>
+                            <p>ทักษะและการฝึกอบรมที่ได้เรียนรู้</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
         </main>
 
-        <div class="button-container">
-            <button class="btn" onclick="window.location.href='Port.html'">Portfolio</button>
-            <button class="btn" onclick="window.location.href='activity.html'">Activity</button>
-            <button class="btn" onclick="window.location.href='page4.html'">Skill training</button>
-        </div>
-
         <footer>
-            <p>&copy; Written on 1/1/2568</p>
+            <div class="footer-links">
+                <a href="Port.html">Portfolio</a>
+                <a href="activity.html">Activity</a>
+                <a href="skill.html">Skill training</a>
+            </div>
+            <p>&copy; เขียนเมื่อ 15/6/2569 — จักรกฤษ มิ่งเชื้อ</p>
         </footer>
+
     </div>
 
     <div id="lightbox" class="modal">
         <span class="modal-close">&times;</span>
         <div class="modal-content">
-            <img id="modal-img" src="" alt="Enlarged view">
+            <img id="modal-img" class="modal-img" src="" alt="Enlarged view">
             <div id="modal-caption" class="modal-caption"></div>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

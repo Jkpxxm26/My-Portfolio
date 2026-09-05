@@ -1,43 +1,159 @@
+/* ==========================================================================
+   1. RESET พื้นฐาน
+   ========================================================================== */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+
+/* ==========================================================================
+   2. ตัวแปรสี — ใช้ชุดเดียวกับหน้า Homepage เพื่อให้ทั้งเว็บโทนสีตรงกัน
+   ========================================================================== */
+
+:root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --border: rgba(255, 255, 255, 0.08);
+
+    --text: #f8fafc;
+    --text-dim: #cbd5e1;
+    --text-mute: #94a3b8;
+    --text-faint: #64748b;
+
+    --accent: #6366f1;
+    --accent-light: #a5b4fc;
+    --accent-sky: #38bdf8;
+}
+
+
+/* ==========================================================================
+   3. โครงหน้า (body + container)
+   ========================================================================== */
+
 body {
     font-family: 'Prompt', sans-serif;
-    background-color: #0f172a;
-    color: #f8fafc;
+    background-color: var(--bg);
+    color: var(--text);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 24px 16px;
 }
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+}
+
+
+/* ==========================================================================
+   4. แถบเมนูด้านบน (Navbar)
+   หมายเหตุ: ส่วนนี้หายไปจากไฟล์เดิม ทำให้เมนูใน Port.html ไม่มีสไตล์เลย
+   จึงเพิ่มกลับมาให้ตรงกับหน้า Homepage
+   ========================================================================== */
+
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-brand {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.nav-brand span {
+    color: var(--accent-sky);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: var(--text-mute);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: var(--text);
+}
+
+
+/* ==========================================================================
+   5. หัวข้อของหน้า Portfolio
+   ========================================================================== */
+
+.page-header {
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: var(--text-mute);
+    font-size: 1rem;
+    font-weight: 300;
+    max-width: 60ch;
+}
+
+
+/* ==========================================================================
+   6. Gallery Grid
+   ========================================================================== */
 
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 24px;
     width: 100%;
-    margin-bottom: 48px;
 }
 
 .image-card {
     position: relative;
+    aspect-ratio: 4 / 3;
     border-radius: 16px;
     overflow: hidden;
-    background: #1e293b;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background: var(--surface);
+    border: 1px solid var(--border);
     cursor: pointer;
-    aspect-ratio: 4 / 3;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.image-card:hover {
+.image-card:hover,
+.image-card:focus-visible {
     transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.25);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 18px 34px rgba(99, 102, 241, 0.28);
 }
 
 .image-card img {
@@ -47,28 +163,37 @@ body {
     transition: transform 0.5s ease;
 }
 
-.image-card:hover img {
+.image-card:hover img,
+.image-card:focus-visible img {
     transform: scale(1.08);
 }
 
 .image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.2) 60%, transparent 100%);
+    background: linear-gradient(
+        to top,
+        rgba(15, 23, 42, 0.95) 0%,
+        rgba(15, 23, 42, 0.25) 55%,
+        transparent 100%
+    );
     display: flex;
     align-items: flex-end;
-    padding: 16px;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
+    padding: 18px;
 }
 
 .caption {
-    color: #f8fafc;
+    color: var(--text);
     font-size: 0.95rem;
     font-weight: 400;
     line-height: 1.4;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
+
+
+/* ==========================================================================
+   7. Modal / Lightbox
+   ========================================================================== */
 
 .modal {
     position: fixed;
@@ -76,16 +201,19 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
+
     background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(10px);
+
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
     z-index: 1000;
-    padding: 20px;
 }
 
 .modal.active {
@@ -99,6 +227,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     transform: scale(0.9);
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -117,9 +246,10 @@ body {
 
 .modal-caption {
     margin-top: 16px;
-    color: #f8fafc;
-    font-size: 1.05rem;
     text-align: center;
+    color: var(--text);
+    font-size: 1.05rem;
+
     background: rgba(30, 41, 59, 0.8);
     padding: 10px 24px;
     border-radius: 20px;
@@ -130,13 +260,38 @@ body {
     position: absolute;
     top: 20px;
     right: 25px;
-    color: #94a3b8;
+    color: var(--text-mute);
     font-size: 2.2rem;
+    line-height: 1;
     cursor: pointer;
     transition: color 0.2s;
-    line-height: 1;
 }
 
 .modal-close:hover {
-    color: #ffffff;
+    color: var(--text);
+}
+
+
+/* ==========================================================================
+   8. Responsive
+   ========================================================================== */
+
+@media (max-width: 600px) {
+    .container {
+        padding: 36px 16px 48px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-inner {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
 }
