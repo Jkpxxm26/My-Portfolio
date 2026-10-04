@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. RESET พื้นฐาน
-   ========================================================================== */
+/*----1. RESET----*/
 
 * {
     box-sizing: border-box;
@@ -9,9 +7,7 @@
 }
 
 
-/* ==========================================================================
-   2. ตัวแปรสี — ใช้ชุดเดียวกับหน้า Homepage เพื่อให้ทั้งเว็บโทนสีตรงกัน
-   ========================================================================== */
+/*----2.ตัวแปรสี----*/
 
 :root {
     --bg: #0f172a;
@@ -29,9 +25,7 @@
 }
 
 
-/* ==========================================================================
-   3. โครงหน้า (body + container)
-   ========================================================================== */
+/*----3.Layout----*/
 
 body {
     font-family: 'Prompt', sans-serif;
@@ -48,11 +42,7 @@ body {
 }
 
 
-/* ==========================================================================
-   4. แถบเมนูด้านบน (Navbar)
-   หมายเหตุ: ส่วนนี้หายไปจากไฟล์เดิม ทำให้เมนูใน Port.html ไม่มีสไตล์เลย
-   จึงเพิ่มกลับมาให้ตรงกับหน้า Homepage
-   ========================================================================== */
+/*----4. Navbar ----*/
 
 .site-nav {
     position: sticky;
@@ -103,10 +93,6 @@ body {
 }
 
 
-/* ==========================================================================
-   5. หัวข้อของหน้า Portfolio
-   ========================================================================== */
-
 .page-header {
     margin-bottom: 40px;
 }
@@ -124,10 +110,6 @@ body {
     max-width: 60ch;
 }
 
-
-/* ==========================================================================
-   6. Gallery Grid
-   ========================================================================== */
 
 .gallery-grid {
     display: grid;
@@ -191,90 +173,7 @@ body {
 }
 
 
-/* ==========================================================================
-   7. Modal / Lightbox
-   ========================================================================== */
-
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(10px);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 1000;
-}
-
-.modal.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.modal-content {
-    max-width: 90%;
-    max-height: 85vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    transform: scale(0.9);
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.modal.active .modal-content {
-    transform: scale(1);
-}
-
-.modal-img {
-    max-width: 100%;
-    max-height: 70vh;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    object-fit: contain;
-}
-
-.modal-caption {
-    margin-top: 16px;
-    text-align: center;
-    color: var(--text);
-    font-size: 1.05rem;
-
-    background: rgba(30, 41, 59, 0.8);
-    padding: 10px 24px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.modal-close {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    color: var(--text-mute);
-    font-size: 2.2rem;
-    line-height: 1;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.modal-close:hover {
-    color: var(--text);
-}
-
-
-/* ==========================================================================
-   8. Responsive
-   ========================================================================== */
+/*----6.Responsive----*/
 
 @media (max-width: 600px) {
     .container {

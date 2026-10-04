@@ -20,7 +20,6 @@
             <div class="nav-links">
                 <a href="Port.html">Portfolio</a>
                 <a href="activity.html">Activity</a>
-                <a href="skill.html">Skill training</a>
             </div>
         </div>
     </nav>
@@ -34,7 +33,7 @@
                     <h1>สวัสดีครับ ผมชื่อ<br><span class="name-highlight">เปรม</span></h1>
                     <p class="hero-desc">
                         พื้นที่รวบรวมผลงาน กิจกรรม และทักษะที่ผมได้ฝึกฝนสะสมมา
-                        
+
                     </p>
                     <div class="hero-meta">
                         <div class="meta-item">
@@ -78,13 +77,26 @@
                         </div>
                     </a>
 
-                    <a class="explore-item" href="page4.html">
+                    <a class="explore-item">
                         <div class="explore-text">
-                            <h3>Skill training</h3>
-                            <p>ทักษะและการฝึกอบรมที่ได้เรียนรู้</p>
+                            <h3>Donate</h3>
+                            <div class="donate">
+                                <p>สามารถร่วมโดเนทให้กำลังใจเจ้าของเว็บได้!</p>
+
+                                <p>ยอดโดเนทรวมทั้งหมด: <span id="totalShow">0</span> บาท</p>
+
+                                <i>
+                                    ใส่จำนวนเงิน :
+                                    <input type="number" class="D-money" id="donateAmount"
+                                        placeholder="ใส่จำนวนเงิน (บาท)" min="1">
+
+                                    <button id="donateBtn">Donate</button>
+                                </i>
+                            </div>
                         </div>
                     </a>
-                </div>
+
+
             </section>
         </main>
 
@@ -92,22 +104,14 @@
             <div class="footer-links">
                 <a href="Port.html">Portfolio</a>
                 <a href="activity.html">Activity</a>
-                <a href="skill.html">Skill training</a>
             </div>
             <p>&copy; เขียนเมื่อ 15/6/2569 — จักรกฤษ มิ่งเชื้อ</p>
         </footer>
 
     </div>
 
-    <div id="lightbox" class="modal">
-        <span class="modal-close">&times;</span>
-        <div class="modal-content">
-            <img id="modal-img" class="modal-img" src="" alt="Enlarged view">
-            <div id="modal-caption" class="modal-caption"></div>
-        </div>
-    </div>
 
-    <script src="script.js"></script>
+    <script src="donate.js"></script>
 </body>
 
 </html>

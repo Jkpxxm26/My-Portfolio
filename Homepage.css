@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+    box-sizing: 0;
     margin: 0;
     padding: 0;
 }
@@ -254,6 +254,7 @@ body {
     transition: transform 0.25s ease;
 }
 
+
 .explore-item:hover,
 .explore-item:focus-visible {
     padding-left: 22px;
@@ -264,6 +265,7 @@ body {
 .explore-item:focus-visible::before {
     transform: scaleY(1);
 }
+
 
 .explore-text h3 {
     font-size: 1.1rem;
@@ -276,6 +278,21 @@ body {
     color: var(--text-mute);
     font-weight: 300;
 }
+
+
+.donate i {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.donate:hover i {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
 
 /* ---------- Footer ---------- */
 
@@ -305,79 +322,6 @@ footer {
 footer p {
     color: var(--text-faint);
     font-size: 0.85rem;
-}
-
-/* ---------- Modal ---------- */
-
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 1000;
-    padding: 20px;
-}
-
-.modal.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.modal-content {
-    max-width: 90%;
-    max-height: 85vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform: scale(0.9);
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.modal.active .modal-content {
-    transform: scale(1);
-}
-
-.modal-img {
-    max-width: 100%;
-    max-height: 70vh;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    object-fit: contain;
-}
-
-.modal-caption {
-    margin-top: 16px;
-    color: #f8fafc;
-    font-size: 1.05rem;
-    text-align: center;
-    background: rgba(30, 41, 59, 0.8);
-    padding: 10px 24px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.modal-close {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    color: #94a3b8;
-    font-size: 2.2rem;
-    cursor: pointer;
-    transition: color 0.2s;
-    line-height: 1;
-}
-
-.modal-close:hover {
-    color: #ffffff;
 }
 
 /* ---------- Responsive ---------- */
